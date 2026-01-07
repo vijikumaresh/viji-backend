@@ -1,0 +1,53 @@
+[package]
+name = "login-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web framework
+actix-web = "4.4"
+actix-cors = "0.7"
+
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Database
+
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "sqlite", "macros", "chrono", "uuid"] }
+
+# Authentication & Security
+jsonwebtoken = "9.2"
+bcrypt = "0.15"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+# Date/Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Environment & Configuration
+dotenv = "0.15"
+env_logger = "0.10"
+log = "0.4"
+
+# Validation
+validator = { version = "0.18", features = ["derive"] }
+regex = "1.10"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# HTTP Auth
+actix-web-httpauth = "0.8"
+
+# HTTP client (for testing)
+reqwest = { version = "0.11", features = ["json"], optional = true }
+
+[dev-dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+
+[features]
+default = []
